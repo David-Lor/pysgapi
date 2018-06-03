@@ -1,0 +1,7 @@
+.vscode/
+__pycache__/
+__main__.py
+steamgifts__/
+SteamGifts.old/
+TODO.md
+*.zip

@@ -1,0 +1,5 @@
+[TYPECHECK]
+ignored-classes=Namespace
+
+[MESSAGES CONTROL]
+disable=C0103
