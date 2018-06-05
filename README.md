@@ -1,6 +1,6 @@
 # PySgApi
 
-PySgApi is a Python tool that works as some sort of unofficial "API" for the [http://www.steamgifts.com](SteamGifts) website.
+PySgApi is a Python tool that works as some sort of unofficial "API" for the [SteamGifts](http://www.steamgifts.com) website.
 
 It can fetch active giveaways on the page with many useful information about them, like:
 
@@ -39,19 +39,30 @@ giveaways = sg.find_giveaways(min_probability=0.5, page=10)
 
 #You can get many things from a giveaway object
 ga = giveaways[0]
-print(ga.name) #Game's name
-print(ga.url) #Giveaway URL
-print(ga.steam_url) #Game's Steam URL
-print(ga.steam_id) #Game's Steam ID
-print(ga.entries) #Entries (how many users entered the GA)
-print(ga.level, ga.points) #Giveaway required level and cost in points
-print(ga.created_utc, ga.end_utc) #Datetime when giveaway was created and ends (in UTC time)
-print(ga.calculate_probability()) #Get the probability (1/number of entries)
+#Game's name
+print(ga.name)
+#Giveaway URL
+print(ga.url)
+#Game's Steam URL
+print(ga.steam_url)
+#Game's Steam ID
+print(ga.steam_id)
+#Entries (how many users entered the GA)
+print(ga.entries)
+#Giveaway required level and cost in points
+print(ga.level, ga.points)
+#Datetime when giveaway was created and ends (in UTC time)
+print(ga.created_utc, ga.end_utc)
+#Get the probability to win (1/number of entries)
+print(ga.calculate_probability())
 
 #Useful methods related with time (all of them return time in seconds)
-print(ga.get_remaining_time()) #How many time is left until giveaway ends?
-print(ga.get_elapsed_time()) #How many time has the giveaway been active?
-print(ga.get_total_time()) #How many time will the giveaway be active?
+#How much time is left until giveaway ends?
+print(ga.get_remaining_time())
+#How much time has the giveaway been active?
+print(ga.get_elapsed_time())
+#How much time will the giveaway be active?
+print(ga.get_total_time())
 
 #Get users that entered the giveaway
 users = ga.get_users()
