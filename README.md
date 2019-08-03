@@ -15,7 +15,7 @@ It can fetch active giveaways on the page with many useful information about the
 
 ## Requirements
 
-* Python 3.x
+* Python >=3.6
 * requests-html
 
 ## Examples

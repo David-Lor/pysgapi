@@ -1,49 +1,48 @@
-
-"""Assets include all secondary objects used by pysgapi
+"""ASSETS
+Secondary objects used by pysgapi
 Giveaway is the object that represents a Giveaway found in SG website
 """
 
-#Native libraries
+# # Native # #
 from datetime import datetime
-#Installed libraries
-#from requests_html import HTMLSession
-#Own modules
+
+# # Package # #
 from .helpers import giveaway_url_to_id, steam_url_to_id, calculate_probability, get_users
 
 
 class Giveaway(object):
     def __init__(self, session, game, steam_url, sg_url, level, points, entries, created, creator, end):
         self._session = session
-        #Game name
+        # Game name
         self.game = game
         self.name = self.game
         self.title = self.game
-        #Steam URL and ID
+        # Steam URL and ID
         self.steam_url = steam_url
         self.steam_link = self.steam_url
         self.steam_id = steam_url_to_id(steam_url)
-        #Giveaway URL and ID
+        # Giveaway URL and ID
         self.sg_url = sg_url
         self.giveaway_url = self.sg_url
         self.url = self.sg_url
         self.id = giveaway_url_to_id(sg_url)
         self.giveaway_id = self.id
-        #Giveaway level and points/cost
+        # Giveaway level and points/cost
         self.level = level
         self.points = points
         self.cost = self.points
-        #Number of entries (users who entered the giveaway)
+        # Number of entries (users who entered the giveaway)
         self.entries = entries
-        #Created and End timestamps
+        # Created and End timestamps
         self.created_unix = created
         self.end_unix = end
-        #User who created the giveaway
+        # User who created the giveaway
         self.creator = creator
         self.user = self.creator
         self.username = self.creator
         self.creator_url = "https://www.steamgifts.com/user/" + self.creator
         self.user_url = self.creator_url
-        #Get created/end in datetime object (UTC)
+        # Get created/end in datetime object (UTC)
         self.created_utc = datetime.fromtimestamp(created)
         self.end_utc = datetime.fromtimestamp(end)
 
